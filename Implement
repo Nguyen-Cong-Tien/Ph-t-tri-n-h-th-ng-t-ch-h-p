@@ -1,0 +1,30 @@
+package thuongky;
+
+import java.rmi.RemoteException;
+import java.rmi.server.UnicastRemoteObject;
+
+import org.w3c.dom.events.Event;
+
+public class chuoiemplement extends UnicastRemoteObject implements chuoiinterface{
+
+    protected chuoiemplement() throws RemoteException {
+        super();
+        //TODO Auto-generated constructor stub
+    }
+
+    @Override
+    public int tongchuoi(String a) throws RemoteException {
+        // TODO Auto-generated method stub
+        return a.length();
+    }
+
+    @Override
+    public String daonguoc(String a) throws RemoteException {
+        // TODO Auto-generated method stub
+        if(a=="exit"){
+            System.out.println("ngat ket noi den client");
+        }
+        String b=new StringBuffer(a).reverse().toString();
+        return b;
+    }
+    
