@@ -1,0 +1,22 @@
+package thuongky;
+
+import java.rmi.registry.LocateRegistry;
+import java.rmi.registry.Registry;
+import java.util.Scanner;
+
+public class client {
+    public static void main(String[] args) {
+        Registry reg;
+        try {
+            reg=LocateRegistry.getRegistry(7);
+            chuoiinterface c=(chuoiinterface) reg.lookup("chuoi");
+            Scanner input =new Scanner(System.in);
+            System.out.println("nhap chuoi can xu ly: ");
+            String x=input.nextLine();
+            System.out.println("tong so luong ky tu trong chuoi la: " +c.tongchuoi(x));
+            System.out.println("Chuoi duoc dao nguoc :"+ c.daonguoc(x));
+        } catch (Exception e) {
+            //TODO: handle exception
+        }
+    }
+}
