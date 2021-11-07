@@ -1,0 +1,20 @@
+package thuongky;
+
+import java.rmi.registry.LocateRegistry;
+import java.rmi.registry.Registry;
+
+public class server {
+    public static void main(String[] args) {
+        try {
+            chuoiemplement obj=new chuoiemplement();
+            System.out.println("Object successfully exist");
+
+            LocateRegistry.createRegistry(7);
+            Registry reg = LocateRegistry.getRegistry(7);
+            reg.bind("chuoi", obj);
+            System.out.println("Successffuly registry services");
+        } catch (Exception e) {
+            //TODO: handle exception
+        }
+    }
+}
