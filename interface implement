@@ -1,0 +1,8 @@
+package thuongky;
+import java.rmi.Remote;
+import java.rmi.RemoteException;
+
+public interface chuoiinterface extends Remote {
+    public int tongchuoi(String a) throws RemoteException;
+    public String daonguoc(String a) throws RemoteException;
+}
